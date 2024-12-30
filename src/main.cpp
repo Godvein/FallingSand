@@ -11,7 +11,7 @@ window.setView(view);
 
 //box setup
 Box box;
-box.initialize();
+box.initialize(window);
 
 //deltaclock
 sf::Clock deltaClock;
@@ -28,9 +28,16 @@ window.close();
 //event loop
 }
 //game loop
+//on mouse click
+if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+box.addSand(window);
+}
+
+//delta time calculation
 float deltatime = deltaClock.restart().asSeconds();
 box.update(deltatime);
 
+//update window size
 sf::Vector2u windowSize = window.getSize();
 sf::View view(sf::FloatRect(0, 0, windowSize.x, windowSize.y));
 window.setView(view);

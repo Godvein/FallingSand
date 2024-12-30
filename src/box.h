@@ -5,14 +5,15 @@ class Box{
 
 private:
 int** array;
-int rows = 50;
-int cols = 50;
+int rows = 380;
+int cols = 200;
 int cellSize = 5;
 float time = 0.0f;
 
 public:
 ~Box();
-void initialize();
+void initialize(sf::RenderWindow& window);
+void addSand(sf::RenderWindow& window);
 void update(float deltatime);
 void draw(sf::RenderWindow& window);
 

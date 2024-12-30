@@ -1,7 +1,9 @@
 #include "box.h"
 #include <iostream>
 //initialize 2d array
-void Box::initialize(){
+void Box::initialize(sf::RenderWindow& window){
+rows = window.getSize().x/cellSize;
+cols = window.getSize().y/cellSize;
 array = new int*[rows];
 
 for(int i = 0; i < rows; i++){
@@ -25,10 +27,24 @@ Box::~Box() {
     delete[] array;
 }
 
+
+//add sands
+void Box::addSand(sf::RenderWindow& window){
+//handling mouse input
+sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+
+int row = mousePos.y/cellSize;
+int col = mousePos.x/cellSize;
+
+if(row >= 0 && row < rows && col >= 0 && col < cols){
+array[row][col] = 1;
+}
+}
+
+
 //update cell
 void Box::update(float deltatime){
 time += deltatime;
-
 //every 0.05 seconds
 if(time > 0.05f){
 //temprorary array to check cell and create next cell
