@@ -13,6 +13,9 @@ window.setView(view);
 Box box;
 box.initialize();
 
+//deltaclock
+sf::Clock deltaClock;
+
 while(window.isOpen()){
 
 sf::Event event;
@@ -25,6 +28,9 @@ window.close();
 //event loop
 }
 //game loop
+float deltatime = deltaClock.restart().asSeconds();
+box.update(deltatime);
+
 sf::Vector2u windowSize = window.getSize();
 sf::View view(sf::FloatRect(0, 0, windowSize.x, windowSize.y));
 window.setView(view);
