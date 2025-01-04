@@ -10,6 +10,9 @@ int cols = 200;
 int cellSize = 5;
 float time = 0.0f;
 
+private:
+int getRandomTwo();
+
 public:
 ~Box();
 void initialize(sf::RenderWindow& window);

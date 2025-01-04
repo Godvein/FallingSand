@@ -16,7 +16,7 @@ for(int j = 0; j < cols; j++){
 array[i][j] = 0;
 }
 }
-array[1][10] = 1;
+std::srand(static_cast<unsigned>(std::time(0))); //initialize random seed
 }
 
 //destructor to free memory
@@ -66,8 +66,18 @@ for(int j = 0; j < cols; j++){
 if(array[i][j] == 1 && array[i+1][j] == 0 ){
 tempArray[i+1][j] = 1;
 }
+//check left and right
 else if(array[i][j] == 1){
+int rand = getRandomTwo();
+if(rand == 0 && j > 0 && array[i][j] == 1 && array[i+1][j-1] == 0){
+tempArray[i+1][j-1] == 1;
+}
+else if(rand == 1 && j < cols - 1 && array[i][j] == 1 && array[i+1][j+1] == 0){
+tempArray[i+1][j+1] == 1;
+}
+else{
 tempArray[i][j] = 1;
+}
 }
 }
 }
@@ -114,4 +124,8 @@ cell.setFillColor(sf::Color::White);
 window.draw(cell);
 }
 }
+}
+
+int Box::getRandomTwo() {
+    return rand() % 2; 
 }
