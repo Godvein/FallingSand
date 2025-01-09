@@ -118,7 +118,7 @@ if(array[i][j] == 0){
 cell.setFillColor(sf::Color::Black);
 }
 else{
-cell.setFillColor(sf::Color::White);
+cell.setFillColor(sf::Color::Yellow);
 }
 
 window.draw(cell);
