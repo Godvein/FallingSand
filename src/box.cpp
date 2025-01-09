@@ -37,7 +37,13 @@ int row = mousePos.y/cellSize;
 int col = mousePos.x/cellSize;
 
 if(row >= 0 && row < rows && col >= 0 && col < cols){
+for(int i = 0; i < 3; i ++){
 array[row][col] = 1;
+if(row >= 0 && row < rows && col >= 0 && col < cols){
+row++;
+col++;
+}
+}
 }
 }
 
