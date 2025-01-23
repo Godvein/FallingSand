@@ -6,10 +6,8 @@ A simple falling sand simulation implemented using C++ and SFML.
 
 Watch a short demo of my project in action:
 
-<video width="1920" height="1080" controls>
-  <source src="videos/fallingsand.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+https://github.com/user-attachments/assets/4d81d632-84da-4c87-ad16-1b00ecf50ba0
+
 
 
 ## Features
